@@ -1,3 +1,10 @@
+/*Description:
+This is a star rating component that is built in such a way that it can be used as
+an API as well in other projects . I have implemented this functionality by using
+default props / parameters in the component definition.
+ The use of propTypes is optional
+*/
+
 import { useState } from "react";
 import PropTypes from "prop-types";
 
