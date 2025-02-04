@@ -21,7 +21,7 @@ const starContainerStyle = {
 StarRating.propTypes = {
   maxRating: PropTypes.number,
   defaultRating: PropTypes.number,
-  size: PropTypes.string,
+  size: PropTypes.number,
   color: PropTypes.string,
   className: PropTypes.string,
   messages: PropTypes.array,
@@ -30,9 +30,9 @@ StarRating.propTypes = {
 
 export default function StarRating({
   maxRating = 5,
-  size = "48px",
+  size = 48,
   color = "#fcc419",
-  classname = "",
+  className = "",
   messages = [],
   defaultRating = 0,
   onSetRating,
@@ -40,7 +40,7 @@ export default function StarRating({
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
 
-  function handleRating() {
+  function handleRating(rating) {
     setRating(rating);
     onSetRating(rating);
   }
@@ -53,7 +53,7 @@ export default function StarRating({
   };
 
   return (
-    <div style={containerStyle} className={classname}>
+    <div style={containerStyle} className={className}>
       <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
