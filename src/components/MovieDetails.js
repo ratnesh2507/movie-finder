@@ -112,7 +112,11 @@ export default function MovieDetails({
             <div className="rating">
               {!isWatched ? (
                 <>
-                  <StarRating maxRating={10} size={24} onSet={setUserRating} />
+                  <StarRating
+                    maxRating={10}
+                    size={24}
+                    onSetRating={setUserRating}
+                  />
                   {userRating > 0 && (
                     <button className="btn-add" onClick={handleAdd}>
                       + Add to list
